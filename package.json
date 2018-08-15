@@ -1,0 +1,14 @@
+{
+  "name": "cloudwatch-loggroup-reaper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "purgeAll.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LukasMusebrink",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.293.0"
+  }
+}
