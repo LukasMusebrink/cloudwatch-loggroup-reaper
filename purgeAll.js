@@ -15,7 +15,7 @@ let run = async(nextToken) =>{
             await cloudwatchlogs.deleteLogGroup({logGroupName: logGroup.logGroupName}).promise();
         }
 
-        if(!logGroups.nextToken) {
+        if(logGroups.nextToken) {
             return run(logGroups.nextToken);
         }
 

@@ -5,7 +5,7 @@ const cloudwatchlogs = new AWS.CloudWatchLogs({region: "eu-west-1"});
 let run = async(nextToken) =>{
     try {
         const logGroups = await cloudwatchlogs.describeLogGroups({
-            limit: 1,
+            limit: 50,
             nextToken
         }).promise();
 
@@ -16,7 +16,7 @@ let run = async(nextToken) =>{
             }
         }
 
-        if(!logGroups.nextToken) {
+        if(logGroups.nextToken) {
             return run(logGroups.nextToken);
         }
 
